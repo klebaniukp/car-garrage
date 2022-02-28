@@ -4,7 +4,6 @@ import { warehouses } from '../resources/warehouses';
 
 export const warehousesController = (req: Request, res: Response) => {
     warehouses.forEach((warehouse) => {
-        //sort cars by date_added, ascending
         const sortedCars: Car[] = sortVehicles(warehouse.cars.vehicles);
         console.log(sortedCars);
     });

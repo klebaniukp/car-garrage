@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import axios from 'axios';
+import { AxiosService } from './services/AxiosService';
+import { WarehousesService } from './services/WarehousesService';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    React.useEffect(() => {
+        const warehousesService = new WarehousesService(
+            new AxiosService(axios)
+        );
+
+        warehousesService.getWarehouses().then((warehouses) => {
+            console.log(warehouses);
+        });
+    }, []);
+    return (
+        <div>
+            <div>App</div>
+        </div>
+    );
 }
 
 export default App;
