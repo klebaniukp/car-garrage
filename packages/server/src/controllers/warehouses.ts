@@ -4,8 +4,7 @@ import { warehouses } from '../resources/warehouses';
 
 export const warehousesController = (req: Request, res: Response) => {
     warehouses.forEach((warehouse) => {
-        const sortedCars: Car[] = sortVehicles(warehouse.cars.vehicles);
-        console.log(sortedCars);
+        sortVehicles(warehouse.cars.vehicles);
     });
 
     res.status(200).json({ warehouses: warehouses });
