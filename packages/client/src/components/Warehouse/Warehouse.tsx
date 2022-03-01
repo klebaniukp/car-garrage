@@ -20,6 +20,8 @@ const Warehouse = () => {
                         <WarehouseNameBar warehouse={warehouse.name} />
                         <WarehouseVehicleContainer
                             vehicles={warehouse.cars.vehicles}
+                            location={warehouse.location}
+                            warehouseName={warehouse.name}
                         />
                     </div>
                 );

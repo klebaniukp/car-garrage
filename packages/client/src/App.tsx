@@ -30,7 +30,7 @@ function App() {
             <div
                 style={{ width: '25vw', height: '100vh' }}
                 className='float-end'>
-                <WarehouseDataSideBar carName={'Toyota'} />
+                <WarehouseDataSideBar />
             </div>
         </div>
     );

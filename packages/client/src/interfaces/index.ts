@@ -8,7 +8,7 @@ export interface Warehouse {
     };
 }
 
-interface Location {
+export interface Location {
     lat: string;
     long: string;
 }
@@ -21,4 +21,22 @@ export interface Car {
     price: number;
     licensed: boolean;
     date_added: string;
+}
+
+export interface ActiveCar {
+    _id: number;
+    make: string;
+    model: string;
+    year_model: number;
+    price: number;
+    licensed: boolean;
+    date_added: string;
+    location: Location;
+    warehouseName: string;
+}
+
+export interface DefaultProps {
+    center: { lat: number; lng: number };
+    zoom: number;
+    key: string;
 }
